@@ -2,6 +2,8 @@
 accompanistSwiperefresh = "0.30.1"
 agp = "8.9.2"
 datastorePreferences = "1.1.1"
+foundation = "1.9.5"
+imageLabeling = "17.0.9"
 kotlin = "2.0.21"
 coreKtx = "1.17.0"
 junit = "4.13.2"
@@ -14,6 +16,7 @@ kotlinxSerializationJson = "1.6.2"
 kotlinseria = "1.6.21"
 coroutines = "1.6.4"
 gson = "2.9.0"
+playServicesMlkitTextRecognition = "16.0.0"
 retrofit = "2.9.0"
 lifecycle_viewmodel_compose = "2.6.1"
 navigation_compose = "2.5.3"
@@ -28,20 +31,20 @@ kotlin-ksp = "2.0.21-1.0.28"
 hiltNavigationCompose = "1.0.0"
 appcompat = "1.7.1"
 room = "2.6.1"
-accompanist = "0.30.1"
-mlkittext = "16.0.0"
-mlkitlabel = "17.0.2"
 timber = "5.0.1"
 
 [libraries]
 accompanist-swiperefresh = { module = "com.google.accompanist:accompanist-swiperefresh", version.ref = "accompanistSwiperefresh" }
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
 androidx-datastore-preferences = { module = "androidx.datastore:datastore-preferences", version.ref = "datastorePreferences" }
+androidx-foundation = { module = "androidx.compose.foundation:foundation", version.ref = "foundation" }
+image-labeling = { module = "com.google.mlkit:image-labeling", version.ref = "imageLabeling" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 compose_material_icons_extended = { module = "androidx.compose.material:material-icons-extended", version.ref = "compose_ui" }
 lifecycle_runtime_compose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "lifecycle_runtime_compose" }
 lifecycle_viewmodel_compose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycle_viewmodel_compose" }
 navigation_compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigation_compose" }
+play-services-mlkit-text-recognition = { module = "com.google.android.gms:play-services-mlkit-text-recognition", version.ref = "playServicesMlkitTextRecognition" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 retrofit_converter_gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
 dagger-hilt = { group= "com.google.dagger", name = "hilt-android", version.ref = "hilt"}
@@ -70,15 +73,7 @@ androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version
 room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
 room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
 room-compiler = { module = "androidx.room:room-compiler", version.ref = "room"}
-accompanist-pager = { module = "com.google.accompanist:accompanist-pager", version.ref = "accompanist" }
-accompanist-pager.indicators = { module = "com.google.accompanist:accompanist-pager-indicators", version.ref = "accompanist" }
 timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
-
-#mlkit
-mlkit-text-recognition = { module = "com.google.mlkit:text-recognition", version.ref = "mlkittext" }
-mlkit-image-labeling = { module = "com.google.mlkit:image-labeling", version.ref = "mlkitlabel" }
-
-
 
 
 [plugins]
@@ -87,6 +82,4 @@ kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlinseria" }
-ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint" }
-detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 kotlin-ksp = { id = "com.google.devtools.ksp", version.ref = "kotlin-ksp" }

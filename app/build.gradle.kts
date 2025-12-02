@@ -94,17 +94,17 @@ dependencies {
     implementation(libs.accompanist.swiperefresh)
 
     // Accompanist Pager
-    implementation(libs.accompanistPager)
-    implementation(libs.accompanistPagerIndicators)
+    implementation (libs.androidx.foundation)
 
+    // image labelling mlkit
+    implementation (libs.image.labeling)
 
-    // ML Kit
-
-
-    implementation(libs.mlkitTextRecognition)
-    implementation(libs.mlkitImageLabeling)
+    // image labelling mlkit
+    implementation (libs.play.services.mlkit.text.recognition)
 
     // Timber
     implementation(libs.timber)
+
+
 
 }
