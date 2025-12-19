@@ -102,6 +102,8 @@ dependencies {
     // image labelling mlkit
     implementation (libs.play.services.mlkit.text.recognition)
 
+        implementation(libs.text.recognition)
+
     // Timber
     implementation(libs.timber)
 
