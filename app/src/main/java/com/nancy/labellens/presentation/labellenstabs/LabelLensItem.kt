@@ -29,7 +29,7 @@ val tabItems = listOf(
         selectedIcon = Icons.Filled.History
     ),
     LabelLensItem(
-        title = "AutoFill",
+        title = "SmartFill",
         unselectedIcon = Icons.Outlined.AutoFixHigh,
         selectedIcon = Icons.Filled.AutoFixHigh
     )
