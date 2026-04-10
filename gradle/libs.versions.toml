@@ -1,6 +1,7 @@
 [versions]
 accompanistSwiperefresh = "0.30.1"
 agp = "8.9.2"
+cameraLifecycle = "1.2.3"
 datastorePreferences = "1.1.1"
 foundation = "1.9.5"
 imageLabeling = "17.0.9"
@@ -31,10 +32,15 @@ kotlin-ksp = "2.0.21-1.0.28"
 hiltNavigationCompose = "1.0.0"
 appcompat = "1.7.1"
 room = "2.6.1"
+textRecognition = "16.0.0"
 timber = "5.0.1"
 
 [libraries]
 accompanist-swiperefresh = { module = "com.google.accompanist:accompanist-swiperefresh", version.ref = "accompanistSwiperefresh" }
+androidx-camera-camera2 = { module = "androidx.camera:camera-camera2", version.ref = "cameraLifecycle" }
+androidx-camera-extensions = { module = "androidx.camera:camera-extensions", version.ref = "cameraLifecycle" }
+androidx-camera-lifecycle = { module = "androidx.camera:camera-lifecycle", version.ref = "cameraLifecycle" }
+androidx-camera-view = { module = "androidx.camera:camera-view", version.ref = "cameraLifecycle" }
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
 androidx-datastore-preferences = { module = "androidx.datastore:datastore-preferences", version.ref = "datastorePreferences" }
 androidx-foundation = { module = "androidx.compose.foundation:foundation", version.ref = "foundation" }
@@ -73,6 +79,7 @@ androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version
 room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
 room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
 room-compiler = { module = "androidx.room:room-compiler", version.ref = "room"}
+text-recognition = { module = "com.google.mlkit:text-recognition", version.ref = "textRecognition" }
 timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
 
 

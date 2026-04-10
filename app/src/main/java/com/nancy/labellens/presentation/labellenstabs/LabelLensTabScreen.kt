@@ -21,6 +21,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import com.nancy.labellens.presentation.autofill.smartfill.SmartFillScreen
+import com.nancy.labellens.presentation.camera.CameraScreen
+import com.nancy.labellens.presentation.history.HistoryScreen
 
 @Composable
 fun LabelLensTabScreen() {
@@ -75,11 +78,16 @@ fun LabelLensTabScreen() {
                 state = pagerState,
                 modifier = Modifier.fillMaxWidth().weight(1f)
             ) { index ->
-                Box(
-                    modifier = Modifier.fillMaxSize(),
-                    contentAlignment = Alignment.Center
-                ) {
-                    Text(text = tabItems[index].title)
+                when (tabItems[index].title) {
+                    "Camera" -> CameraScreen()
+                    "History" ->  HistoryScreen()
+                    "SmartFill" -> SmartFillScreen()
+                    else -> Box(
+                        modifier = Modifier.fillMaxSize(),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Text(text = tabItems[index].title)
+                    }
                 }
             }
         }

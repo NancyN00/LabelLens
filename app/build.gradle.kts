@@ -102,9 +102,18 @@ dependencies {
     // image labelling mlkit
     implementation (libs.play.services.mlkit.text.recognition)
 
+        implementation(libs.text.recognition)
+
     // Timber
     implementation(libs.timber)
 
+    // Coil for optional image loading
+    implementation(libs.coil.compose)
 
+    // CameraX for real-time camera preview
+    implementation(libs.androidx.camera.camera2)
+    implementation(libs.androidx.camera.lifecycle)
+    implementation(libs.androidx.camera.view)
+    implementation(libs.androidx.camera.extensions)
 
 }
