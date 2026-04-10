@@ -14,7 +14,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.nancy.labellens.presentation.autofill.smartfill.SmartFillPermissionWrapper
 import com.nancy.labellens.presentation.labellenstabs.LabelLensTabScreen
 import com.nancy.labellens.ui.theme.LabelLensTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -1,6 +1,5 @@
 package com.nancy.labellens.presentation.autofill.smartfill
 
-
 import android.content.Context
 import android.net.Uri
 import androidx.activity.compose.rememberLauncherForActivityResult
@@ -11,24 +10,25 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.google.mlkit.vision.common.InputImage
 import com.google.mlkit.vision.text.TextRecognition
 import com.google.mlkit.vision.text.TextRecognizer
 import com.google.mlkit.vision.text.latin.TextRecognizerOptions
 import com.nancy.labellens.presentation.autofill.livecamerafill.LiveOcrCamera
+import com.nancy.labellens.presentation.autofill.smartfill.viewmodel.SmartFillViewModel
 
 @Composable
-fun SmartFillScreen() {
-
+fun SmartFillScreen(
+    viewModel: SmartFillViewModel = hiltViewModel()
+) {
     val context = LocalContext.current
 
-    // Autofill states
     var title by remember { mutableStateOf("") }
     var date by remember { mutableStateOf("") }
     var location by remember { mutableStateOf("") }
 
     var showLiveCamera by remember { mutableStateOf(false) }
-
 
     // ML Kit OCR client
     val recognizer = remember {
@@ -46,6 +46,8 @@ fun SmartFillScreen() {
                 title = result.title
                 date = result.date
                 location = result.location
+                // Save to History
+                viewModel.saveRecognizedText(title, date, location)
             }
         }
     }
@@ -63,6 +65,7 @@ fun SmartFillScreen() {
                     title = result.title
                     date = result.date
                     location = result.location
+                    viewModel.saveRecognizedText(title, date, location)
                 }
         }
     }
@@ -88,7 +91,6 @@ fun SmartFillScreen() {
             Button(onClick = { showLiveCamera = true }) {
                 Text("Live")
             }
-
         }
 
         OutlinedTextField(
@@ -112,6 +114,7 @@ fun SmartFillScreen() {
             modifier = Modifier.fillMaxWidth()
         )
     }
+
     if (showLiveCamera) {
         LiveOcrCamera(
             recognizer = recognizer,
@@ -119,14 +122,12 @@ fun SmartFillScreen() {
                 title = result.title
                 date = result.date
                 location = result.location
+                viewModel.saveRecognizedText(title, date, location)
             },
             onClose = { showLiveCamera = false }
         )
     }
-
-
-
-    }
+}
 
 private fun processImage(
     context: Context,
@@ -138,5 +139,3 @@ private fun processImage(
         onResult(parseSmartFillText(extractedText))
     }
 }
-
-
