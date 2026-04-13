@@ -36,3 +36,11 @@ LabelLens is an Android app powered by Google ML Kit that performs text recognit
   - Image Labeling
 - **AndroidX**
 - **Material 3**
+
+# Screenshots 📷
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/24853fa5-e8b1-4c7a-aa0d-d6d0008bbf71" width="28%" />
+  <img src="https://github.com/user-attachments/assets/71068c05-879b-4a2e-844f-5f509a9a0cef" width="28%" />
+  <img src="https://github.com/user-attachments/assets/c5928b01-17c6-4dc4-8765-e7e0d28a29be" width="28%" />
+</p>
+
